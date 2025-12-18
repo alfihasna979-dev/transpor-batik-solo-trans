@@ -1,5 +1,5 @@
 !pip install colorama
-# Import library untuk warna di terminal
+# Import library untuk warna
 from colorama import Fore, Style, init
 
 # Inisialisasi colorama
@@ -29,9 +29,17 @@ data = {
     "apakah ada biaya tambahan bagasi": "Tidak."
 }
 
+# ASCII art bus
+bus_art = Fore.YELLOW + r"""
+       ______
+      /|_||_\`.__
+     (   _    _ _\
+     =`-(_)--(_)-'
+""" + " 🚌"
+
 # Tampilan pembuka
 print(Fore.CYAN + "="*60)
-print(Fore.GREEN + Style.BRIGHT + "Chatbot Informasi Batik Solo Trans (BST)")
+print(Fore.GREEN + Style.BRIGHT + "Chatbot Informasi Batik Solo Trans (BST) 🚌")
 print(Fore.CYAN + "="*60)
 print(Fore.YELLOW + "Semua warga Solo dapat menggunakan chatbot ini untuk melihat jadwal dan layanan BST.")
 print("Gunakan huruf kecil semua contoh: 'berapa menit sekali bst lewat'")
@@ -43,11 +51,13 @@ while True:
     user = input(Fore.MAGENTA + "Anda: ").lower()
 
     if user == "exit":
-        print(Fore.GREEN + "Terima kasih telah menggunakan chatbot BST!")
+        print(Fore.GREEN + "Terima kasih telah menggunakan chatbot BST! 🚌")
         break
 
     if user in data:
-        print(Fore.BLUE + Style.BRIGHT + "Bot: " + Style.NORMAL + data[user])
+        print(bus_art)
+        print(Fore.BLUE + Style.BRIGHT + "Bot: " + Style.NORMAL + data[user] + " 🚌")
+        print(bus_art)
     else:
         print(Fore.RED + "Bot: Maaf, saya belum paham pertanyaan Anda. " +
               "Coba gunakan kata kunci seperti 'jadwal keberangkatan bst koridor 1'.")
