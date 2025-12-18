@@ -7,8 +7,14 @@ data = {
     "jadwal keberangkatan bst koridor 3": "Koridor 3 beroperasi mulai 05.30 dengan interval 10–20 menit hingga 20.30–21.00.",
     "berapa menit sekali bst lewat": "BST biasanya lewat setiap 10–15 menit pada jam normal dan bisa menjadi 20 menit pada malam hari.",
     "apa itu bst": "Bus Solo Trans adalah layanan angkutan umum berbasis bus rapid transit (BRT) di Kota Solo yang bertujuan memudahkan masyarakat dalam mobilitas.",
-    
-    
+    "berapa jumlah koridor atau rute yang dimiliki bst": "Bus Solo Trans memiliki beberapa koridor/rute salah satunya Koridor 1 (terminal Purwosari – Terminal Banyuanyar).",
+    "keunggulan bst": "Nyaman aman cepat tarif terjangkau.",
+    "dimana bisa beli tiket": "Loket halte atau aplikasi digital.",
+    "apakah ada jalur khusus": "Ya.",
+    "siapa yang dapat fasilitas prioritas": "Lansia disabilitas ibu hamil anak kecil.",
+    "jam operasional": "Sekitar 05.00–21.00.",
+    "apakah bus ini ramah lingkungan": "Ya menggunakan bahan bakar bersih.".
+   
 }
 
 print("Chatbot Informasi Batik Solo Trans (BST)")
