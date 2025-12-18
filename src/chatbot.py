@@ -1,11 +1,10 @@
 !pip install colorama
-# Import library untuk warna
 from colorama import Fore, Style, init
 
 # Inisialisasi colorama
 init(autoreset=True)
 
-# Data pertanyaan dan jawaban (kamus)
+# Data pertanyaan dan jawaban (kamus lengkap)
 data = {
     "jadwal bus trans solo": "Bus Trans Solo beroperasi mulai pukul 05.30 WIB sampai 21.00 WIB untuk semua koridor utama.",
     "jam berapa bst berangkat": "Bus BST mulai beroperasi pukul 05.30 WIB setiap hari.",
@@ -37,27 +36,56 @@ bus_art = Fore.YELLOW + r"""
      =`-(_)--(_)-'
 """ + " 🚌"
 
+# Fungsi menampilkan balon chat
+def print_chat(sender, text):
+    width = 50
+    words = text.split()
+    line = ""
+    lines = []
+
+    for word in words:
+        if len(line) + len(word) + 1 <= width:
+            line += word + " "
+        else:
+            lines.append(line.strip())
+            line = word + " "
+    lines.append(line.strip())
+
+    # Pilih warna dan emot
+    if sender == "Bot":
+        color = Fore.RED + Style.BRIGHT
+        prefix = "🤖🚌 Bot:"
+    else:
+        color = Fore.BLUE + Style.BRIGHT
+        prefix = "💬🚌 Anda:"
+
+    # Cetak balon
+    print(color + "┌" + "─" * (width + 2) + "┐")
+    print(color + f"│ {prefix}".ljust(width + 3) + "│")
+    print(color + "├" + "─" * (width + 2) + "┤")
+    for l in lines:
+        print(color + f"│ {l}".ljust(width + 3) + "│")
+    print(color + "└" + "─" * (width + 2) + "┘")
+
 # Tampilan pembuka
-print(Fore.CYAN + "="*60)
-print(Fore.GREEN + Style.BRIGHT + "Chatbot Informasi Batik Solo Trans (BST) 🚌")
-print(Fore.CYAN + "="*60)
-print(Fore.YELLOW + "Semua warga Solo dapat menggunakan chatbot ini untuk melihat jadwal dan layanan BST.")
-print("Gunakan huruf kecil semua contoh: 'berapa menit sekali bst lewat'")
+print("=" * 64)
+print(Style.BRIGHT + Fore.GREEN + "🚌 Selamat datang di Chatbot Bus Solo Trans (BST) 🚌")
+print("=" * 64)
+print("Tanyakan informasi seputar jadwal dan layanan BST.")
+print("Gunakan huruf kecil semua, contoh: 'berapa menit sekali bst lewat'")
 print("Ketik 'exit' untuk keluar")
-print(Fore.CYAN + "-"*60)
+print("-" * 64)
 
-# Loop chatbot
+# Loop utama chatbot
 while True:
-    user = input(Fore.MAGENTA + "Anda: ").lower()
+    user_input = input("\n💬🚌 Anda : ").lower()
 
-    if user == "exit":
-        print(Fore.GREEN + "Terima kasih telah menggunakan chatbot BST! 🚌")
+    if user_input == "exit":
+        print_chat("Bot", "Terima kasih telah menggunakan chatbot BST 🚌")
         break
 
-    if user in data:
-        print(bus_art)
-        print(Fore.BLUE + Style.BRIGHT + "Bot: " + Style.NORMAL + data[user] + " 🚌")
-        print(bus_art)
+    if user_input in data:
+        print_chat("Bot", data[user_input])
     else:
-        print(Fore.RED + "Bot: Maaf, saya belum paham pertanyaan Anda. " +
-              "Coba gunakan kata kunci seperti 'jadwal keberangkatan bst koridor 1'.")
+        print_chat("Bot", "Maaf, saya belum memahami pertanyaan Anda. "
+                  "Coba gunakan kata kunci seperti 'jadwal keberangkatan bst koridor 1'.")
