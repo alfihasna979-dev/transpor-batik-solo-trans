@@ -19,6 +19,7 @@ data = {
 
 print("Chatbot Informasi Batik Solo Trans (BST)")
 print("semua warga solo dapat menggunakan untuk melihat jadwal dan layanan bst")
+print("gunakan huruf kecil semua contoh (berapa menit sekali bst lewat)")
 print("selamat komunikasi dengan chatbot")
 print("Ketik 'exit' untuk keluar")
 
