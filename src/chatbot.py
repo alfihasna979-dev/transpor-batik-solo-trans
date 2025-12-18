@@ -13,7 +13,7 @@ data = {
     "apakah ada jalur khusus": "Ya.",
     "siapa yang dapat fasilitas prioritas": "Lansia disabilitas ibu hamil anak kecil.",
     "jam operasional": "Sekitar 05.00–21.00.",
-    "apakah bus ini ramah lingkungan": "Ya menggunakan bahan bakar bersih.".
+    "apakah bus ini ramah lingkungan": "Ya menggunakan bahan bakar bersih."
    
 }
 
