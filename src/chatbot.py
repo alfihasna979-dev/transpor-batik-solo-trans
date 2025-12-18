@@ -13,7 +13,13 @@ data = {
     "apakah ada jalur khusus": "Ya.",
     "siapa yang dapat fasilitas prioritas": "Lansia disabilitas ibu hamil anak kecil.",
     "jam operasional": "Sekitar 05.00–21.00.",
-    "apakah bus ini ramah lingkungan": "Ya menggunakan bahan bakar bersih."
+    "apakah bus ini ramah lingkungan": "Ya menggunakan bahan bakar bersih.",
+    "harga tiket bst": "Rp 3.500–5.000 (sesuai rute).",
+    "diskon untuk siapa": "Lansia pelajar disabilitas.",
+    "Cara top up kartu bst": "Lewat loket atau aplikasi digital.",
+    "tarif koridor 1 sama koridor 2": "Sama flat rate.",
+    "bisa pakai qris": "Ya di beberapa halte.",
+    "apakah ada biaya tambahan bagasi": "Tidak."
    
 }
 
